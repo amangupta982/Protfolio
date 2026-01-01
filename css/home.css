@@ -1,0 +1,110 @@
+.hero {
+  min-height: 100vh;
+  padding-top: 140px;
+  position: relative;
+}
+
+.hero-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(56,189,248,0.15), transparent 70%);
+  z-index: -1;
+}
+
+.hero-container {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.profile-wrapper {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  padding: 6px;
+  background: linear-gradient(135deg, #38bdf8, #22d3ee);
+  animation: float 6s ease-in-out infinite;
+}
+
+.profile-wrapper img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.hero-right h1 {
+  font-size: 48px;
+}
+
+.hero-right h1 span {
+  color: #38bdf8;
+}
+
+.subtitle {
+  margin-top: 10px;
+  color: #94a3b8;
+}
+
+.badges {
+  margin: 20px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.badges span {
+  padding: 8px 14px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.1);
+  font-size: 14px;
+}
+
+.info-cards {
+  display: flex;
+  gap: 20px;
+  margin: 24px 0;
+}
+
+.info-card {
+  padding: 14px 18px;
+  font-size: 14px;
+}
+
+.socials {
+  margin-top: 20px;
+  display: flex;
+  gap: 18px;
+}
+
+.socials a {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #e5e7eb;
+  transition: 0.3s;
+}
+
+.socials a:hover {
+  background: #38bdf8;
+  transform: scale(1.1);
+}
+
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
+/* ElevenLabs Widget Polish */
+elevenlabs-agent {
+  --accent-color: #38bdf8;
+  --background: rgba(20, 20, 30, 0.9);
+  --border-radius: 18px;
+}

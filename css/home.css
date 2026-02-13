@@ -1,3 +1,79 @@
+ /* =====================================================
+   GLOBAL RESET & BASE STYLES
+===================================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background: radial-gradient(circle at top, #020617, #000);
+  color: #e5e7eb;
+  overflow-x: hidden;
+}
+
+/*=====================================================
+   GLASS EFFECT
+  =====================================================*/
+
+.glass {
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+  border-radius: 16px;
+}
+
+/* =====================================================
+   NAVBAR
+  =====================================================*/
+
+.navbar {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  padding: 16px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
+
+.nav-left {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.nav-left span {
+  color: #38bdf8;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 24px;
+}
+
+.nav-links a {
+  color: #cbd5f5;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links .active {
+  color: #38bdf8;
+}
+/* 
+/ =====================================================
+   HERO SECTION
+===================================================== / */
+
 .hero {
   min-height: 100vh;
   padding-top: 140px;
@@ -20,6 +96,8 @@
   align-items: center;
 }
 
+/* / PROFILE IMAGE / */
+
 .profile-wrapper {
   width: 280px;
   height: 280px;
@@ -36,6 +114,8 @@
   object-fit: cover;
 }
 
+/* / TEXT / */
+
 .hero-right h1 {
   font-size: 48px;
 }
@@ -48,6 +128,8 @@
   margin-top: 10px;
   color: #94a3b8;
 }
+
+/* / BADGES / */
 
 .badges {
   margin: 20px 0;
@@ -64,6 +146,8 @@
   font-size: 14px;
 }
 
+/* / INFO CARDS / */
+
 .info-cards {
   display: flex;
   gap: 20px;
@@ -74,6 +158,8 @@
   padding: 14px 18px;
   font-size: 14px;
 }
+
+/* / SOCIAL ICONS / */
 
 .socials {
   margin-top: 20px;
@@ -98,11 +184,17 @@
   transform: scale(1.1);
 }
 
+/* / FLOAT ANIMATION / */
+
 @keyframes float {
   0%,100% { transform: translateY(0); }
   50% { transform: translateY(-14px); }
 }
-/* ElevenLabs Widget Polish */
+
+/* =====================================================
+   ELEVENLABS WIDGET STYLE
+===================================================== */
+
 elevenlabs-agent {
   --accent-color: #38bdf8;
   --background: rgba(20, 20, 30, 0.9);

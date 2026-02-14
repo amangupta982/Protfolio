@@ -78,12 +78,13 @@ body {
   min-height: 100vh;
   padding-top: 140px;
   position: relative;
+  
 }
 
 .hero-glow {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at center, rgba(56,189,248,0.15), transparent 70%);
+  background: radial-gradient(circle at center, rgba(56,189,248,0.08), transparent 70%);
   z-index: -1;
 }
 
@@ -98,14 +99,22 @@ body {
 }
 
 /* / PROFILE IMAGE / */
-
 .profile-wrapper {
-  width: 280px;
-  height: 280px;
+  width: 380px;
+  height: 380px;
   border-radius: 50%;
-  padding: 6px;
-  background: linear-gradient(135deg, #38bdf8, #22d3ee);
-  animation: float 6s ease-in-out infinite;
+  padding: 10px;
+
+  /* DARK BLUE RING */
+  background: #0f2745;
+
+  /* OUTER GLOW */
+  border:4px solid #38bdf8;
+  box-shadow:
+    0 0 30px rgba(56,189,248,0.6),
+    0 0 70px rgba(56,189,248,0.35),
+    0 0 120px rgba(56,189,248,0.18);
+  animation:float 4s ease-in-out infinite;
 }
 
 .profile-wrapper img {
@@ -113,7 +122,12 @@ body {
   height: 100%;
   border-radius: 50%;
   object-fit: cover;
+
+
+  /* REMOVE glow from image */
+  box-shadow: none;
 }
+
 
 /* / TEXT / */
 
@@ -201,3 +215,4 @@ elevenlabs-agent {
   --background: rgba(20, 20, 30, 0.9);
   --border-radius: 18px;
 }
+

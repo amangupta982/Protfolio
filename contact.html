@@ -46,18 +46,32 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
 
   <!-- SOCIAL ICONS -->
   <div class="contact-socials">
-    <a href="https://github.com/amangupta982"><i class="fab fa-github"></i></a>
-    <a href="https://linkedin.com/in/amangputa982"><i class="fab fa-linkedin"></i></a>
-    <a href="mailto:amanmacair98@gmail.com"><i class="fas fa-envelope"></i></a>
-    <a href="#"><i class="fab fa-whatsapp"></i></a>
-    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="https://github.com/amangupta982" target="_blank">
+      <i class="fab fa-github"></i>
+    </a>
+
+    <a href="https://linkedin.com/in/amangputa982" target="_blank">
+      <i class="fab fa-linkedin"></i>
+    </a>
+
+    <a href="mailto:amanmacair98@gmail.com">
+      <i class="fas fa-envelope"></i>
+    </a>
+
+    <a href="#">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <a href="#">
+      <i class="fab fa-instagram"></i>
+    </a>
   </div>
 
   <!-- CONTACT FORM -->
   <form action="https://formspree.io/f/mpqjdagl"
         method="POST"
-        class="contact-form glass">
-        
+        class="contact-form glass"
+        id="contactForm">
 
     <input type="text" name="name" placeholder="Your Name" required>
 
@@ -68,11 +82,61 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     <textarea name="message" rows="5"
       placeholder="Your Message..." required></textarea>
 
-    <button type="submit">🚀 Send Message</button>
-    
+    <button type="submit" id="sendBtn">
+      🚀 Send Message
+    </button>
+
+    <p id="formStatus"></p>
+
   </form>
 
 </section>
+
+<!-- ================= FORM SCRIPT ================= -->
+<script>
+const form = document.getElementById("contactForm");
+const btn = document.getElementById("sendBtn");
+const status = document.getElementById("formStatus");
+
+form.addEventListener("submit", async function(e) {
+  e.preventDefault();
+
+  btn.innerHTML = "Sending...";
+  btn.disabled = true;
+
+  const data = new FormData(form);
+
+  try {
+    const response = await fetch(form.action, {
+      method: form.method,
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    });
+
+    if (response.ok) {
+      status.innerHTML = "✅ Message sent successfully!";
+      status.style.color = "#38bdf8";
+
+      form.reset();
+      btn.innerHTML = "Message Sent ✓";
+
+      setTimeout(() => {
+        btn.innerHTML = "🚀 Send Message";
+        btn.disabled = false;
+        status.innerHTML = "";
+      }, 3000);
+    } else {
+      throw new Error();
+    }
+
+  } catch (error) {
+    status.innerHTML = "❌ Something went wrong. Try again.";
+    status.style.color = "#f87171";
+    btn.innerHTML = "🚀 Send Message";
+    btn.disabled = false;
+  }
+});
+</script>
 
 </body>
 </html>

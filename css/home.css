@@ -88,7 +88,8 @@ body {
 }
 
 .hero-container {
-  max-width: 1200px;
+  max-width: 1300px;
+  width: 92%;
   margin: auto;
   display: grid;
   grid-template-columns: 1fr 1.4fr;
@@ -117,7 +118,7 @@ body {
 /* / TEXT / */
 
 .hero-right h1 {
-  font-size: 48px;
+  font-size: 80px;
 }
 
 .hero-right h1 span {

@@ -3,10 +3,11 @@
 ===================================================== */
 
 .contact-section {
-  padding-top: 140px;   /* same as hero spacing */
-  max-width: 800px;
+  max-width: 1100px;
   margin: auto;
+  padding: 180px 20px 100px;
   text-align: center;
+  position: relative;
 }
 
 /* HEADER */
@@ -60,9 +61,25 @@
 ===================================================== */
 
 .contact-form {
-  padding: 30px;
-  border-radius: 18px;
-  margin-top: 20px;
+  max-width: 900px;          /* bigger box */
+  margin: 50px auto 0;
+  padding: 40px 36px;
+  border-radius: 22px;
+  position: relative;
+  overflow: hidden;
+}
+/* GLOW BEHIND BOX (HOME STYLE) */
+.contact-form::before {
+  content: "";
+  position: absolute;
+  inset: -80px;
+  background: radial-gradient(
+      circle,
+      rgba(56,189,248,0.18),
+      transparent 65%
+  );
+  z-index: -1;
+  filter: blur(40px);
 }
 
 .contact-form input,

@@ -1,0 +1,86 @@
+.resume-section {
+  padding-top: 140px;
+  width: 92%;
+  max-width: 1300px;
+  margin: auto;
+}
+
+.resume-title {
+  text-align: center;
+  font-size: 48px;
+  color: #38bdf8;
+  margin-bottom: 40px;
+}
+
+/* ===== SUMMARY CARD ===== */
+.resume-summary {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  padding: 30px;
+  border-radius: 20px;
+  margin-bottom: 40px;
+
+  /* glow like home page */
+  box-shadow:
+    0 0 40px rgba(56, 189, 248, 0.12),
+    0 0 80px rgba(56, 189, 248, 0.06);
+}
+
+.resume-summary h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.resume-summary h4 {
+  margin-top: 20px;
+  color: #38bdf8;
+}
+
+.resume-summary p,
+.resume-summary li {
+  color: #cbd5f5;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.resume-summary ul {
+  padding-left: 18px;
+}
+
+/* ===== SKILLS ===== */
+.skills-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.skills-tags span {
+  background: rgba(56, 189, 248, 0.15);
+  color: #38bdf8;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+/* ===== PDF VIEWER ===== */
+.resume-viewer {
+  padding: 15px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.resume-viewer iframe {
+  width: 100%;
+  height: 750px;
+  border: none;
+  border-radius: 12px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .resume-summary {
+    grid-template-columns: 1fr;
+  }
+}
